@@ -19,6 +19,8 @@ dsPIC33 4-Switch Buck-Boost Converter
 
 - - -
 
+<span id="start-doc"><a name="start-doc"></a></span> 
+
 ## Table of Contents
   - [How to use this document](#how-to-use-this-document)
   - [Summary](#summary)
@@ -44,12 +46,19 @@ dsPIC33 4-Switch Buck-Boost Converter
     - [More Details on Start-up](#more-details-on-start-up)
   - [Plant Frequency Response Simulation with MPLAB® Mindi™](#plant-frequency-response-simulation-with-mplab-mindi)
   - [Importing Plant Frequency Response into DCDT](#importing-plant-frequency-response-into-dcdt)
+
 - - -
+
+<span id="how-to-use-this-document"><a name="how-to-use-this-document"> </a></span>
+
 ## How to use this document
 This document is intended as a supplement to the user's guide. We recommend that the user's guide is studied before reading this document. 
 The user's guide can be found [here.](https://www.microchip.com/developmenttools/ProductDetails/PartNO/EV44M28A).
 
 - - -
+
+<span id="summary"><a name="summary"> </a></span>
+
 ## Summary
 This solution demonstrates the implementation of a 4-switch buck-boost converter  using voltage mode control on the Four-Switch Buck-Boost Development Board (4SWBB).
 This power board is a generic development board for this topology that supports rapid prototyping and code development based on dsPIC33 devices. The board provides organized building blocks that include an input filter, power stage, AUX supply, mating socket for Microchip’s newest Digital Power
@@ -61,6 +70,9 @@ The associated firmware uses voltage mode control to regulate the output voltage
 The firmware also includes a scheduler to allow the user to easily add their own housekeeping functions. In our example code, the scheduler executes drivers for the Human Machine Interface (HMI) and for communication with the Board Power Visualizer GUI.
 
 - - -
+
+<span id="related-collateral"><a name="related-collateral"> </a></span>
+
 ## Related Collateral
 
 The related documentation can be found on the appropriate product website
@@ -72,6 +84,8 @@ Please always check for the latest data sheets on the respective product website
 - [dsPIC33CK256MP508 Family](https://www.microchip.com/dsPIC33CK256MP508)
 - [dsPIC33CH512MP508 Family](https://www.microchip.com/dsPIC33CH512MP508)
 
+<span id="software-used"><a name="software-used"> </a></span>
+
 ### Software Used
 - [Power Board Visualizer GUI](https://www.microchip.com/SWLibraryWeb/product.aspx?product=POWER_BOARD_VISUALIZER)
 - [MPLAB&reg; X IDE v5.45](https://www.microchip.com/mplabx-ide-windows-installer)
@@ -80,16 +94,23 @@ Please always check for the latest data sheets on the respective product website
 - [Digital Compensator Design Tool](https://www.microchip.com/developmenttools/ProductDetails/DCDT)
 - [MPLAB&reg; Mindi™ Simulator](https://www.microchip.com/SWLibraryWeb/producttc.aspx?product=AnalogSimMPLABMindi)
 
+<span id="hardware-used"><a name="hardware-used"> </a></span>
+
 ### Hardware Used
 - Four-Switch Buck-Boost Development Board, Part-No. [EV44M28A](https://www.microchip.com/developmenttools/ProductDetails/PartNO/EV44M28A)
 - dsPIC33CK256MP506 Digital Power PIM, Part-No. [MA330048](https://www.microchip.com/MA330048)
 
 ---
 
+<span id="quick-start-guide"><a name="quick-start-guide"> </a></span>
+
 ## Quick-start Guide
 In this section, we describe step by step how to run the firmware on the power board. We also describe how to interface with the board power visualizer GUI.
 <br/>
 <br/>
+
+<span id="basic-hardware-setup"><a name="basic-hardware-setup"> </a></span>
+
 ### Basic Hardware Setup 
 
 Connect the DP-PIM to the power board. Then connect the ICD4 debugger to the 6-pin header on the DP-PIM via the RJ11 cable and the RJ11 to ICSP adapter. Finally, connect a USB cable between the micro-USB port on the top-right of the DP-PIM and your computer - for this you will require a type A to micro-USB type B cable.
@@ -140,6 +161,11 @@ At this point, the code should be running on the dsPIC without any input voltage
 
 <br/>
 <br/>
+
+<span id="setting-up-and-connecting-the-board-power-visualizer"><a name="setting-up-and-connecting-the-board-power-visualizer"> </a></span>
+
+[[back to top](#start-doc)]
+
 
 ### Setting up and connecting the board power visualizer  
 
@@ -213,6 +239,11 @@ To change the output voltage, move the poti wiper.
 <br/>
 <br/>
 
+<span id="running-closed-loop-with-poti-reference"><a name="running-closed-loop-with-poti-reference"> </a></span>
+
+[[back to top](#start-doc)]
+
+
  ### Running Closed Loop with Poti Reference
  <br/>
 
@@ -252,17 +283,20 @@ The converter is now running in closed loop mode. This means that the potentiome
 
 Move the potentiometer wiper to change the voltage loop reference and thus the output voltage. <br/>
 
-<br/>
+[[back to top](#start-doc)]
 
- ### Running Closed Loop with a Fixed Reference
- <br/>
- To run the firmware with a fixed internal reference, disconnect the potentiometer from the power board and re-start the firmware. At start-up, the firmware checks for the presence of the potentiometer. If the firmware determines that no potentiometer is connected, it used a fixed internal reference that corresponds to an output voltage of 12V. In this case, you will see that the "Fixed Ref" flag will be on.
- <p>
-  <center>
-    <img src="images/4SWBB-basic-setup-13.png" alt="EPC9531 Test Fixture Connections - Top View" width="150">
-    <br>
-    Fixed Ref flag in GUI status window
-  </center>
+
+
+<span id="running-closed-loop-with-a-fixed-reference"><a name="running-closed-loop-with-a-fixed-reference"> </a></span>
+
+### Running Closed Loop with a Fixed Reference
+To run the firmware with a fixed internal reference, disconnect the potentiometer from the power board and re-start the firmware. At start-up, the firmware checks for the presence of the potentiometer. If the firmware determines that no potentiometer is connected, it used a fixed internal reference that corresponds to an output voltage of 12V. In this case, you will see that the "Fixed Ref" flag will be on.
+<p>
+<center>
+<img src="images/4SWBB-basic-setup-13.png" alt="EPC9531 Test Fixture Connections - Top View" width="150">
+<br>
+Fixed Ref flag in GUI status window
+</center>
 </p>
 
 To run closed-loop with a fixed reference:
@@ -270,13 +304,13 @@ To run closed-loop with a fixed reference:
 * Short press "USER" button to run converter.
 
 At this point, there should be 12V at the output. You can short-press the "USER" button to turn on/off the converter.  <br/>
-<br/>
-<br/>
+
+<span id="running-closed-loop-with-gui-reference"><a name="running-closed-loop-with-gui-reference"> </a></span>
+
+[[back to top](#start-doc)]
 
 ### Running Closed Loop with GUI Reference
-
 <br/>
-
 Configure the converter to run in closed loop mode. To use the GUI programmable reference, either click on the "Update Ref value" button on the GUI or click on the "Update" button on the slider. You can select the output voltage using the slider. The "GUI Ref" flag should be on when the GUI reference is active.
 <p>
   <center>
@@ -288,7 +322,12 @@ Configure the converter to run in closed loop mode. To use the GUI programmable 
 
 At this point, You can try different combinations of input voltages, output voltages and loads. Note that the converter can operate safely to a max output power of 20W, and max output load current of 2A.
 
+[[back to top](#start-doc)]
+
+
 ---
+
+<span id="control-method"><a name="control-method"> </a></span>
 
 ## Control Method
 
@@ -345,7 +384,11 @@ The demo firmware can be configured to use a type 2 compensator (2P2Z) and can a
   </center>
 </p>  
 
+[[back to top](#start-doc)]
+
 ---
+
+<span id="converter-state-machine-overview"><a name="converter-state-machine-overview"> </a></span>
 
 ## Converter State Machine Overview
 
@@ -362,22 +405,32 @@ A brief description of each state is given in this section.
   </center>
 </p> 
 
+<span id="start-up"><a name="start-up"> </a></span>
+
 ### Start-up
 * The PWM is initialized
   * the PWM outputs are disabled but the PWM modules are running internally to trigger the ADC ISR.
   * This is important as all signal measurements are based upon the ADC ISR.
 
+<span id="fault-handler"><a name="fault-handler"> </a></span>
+
 ### Fault Handler
 
 * The fault handler is called every 100us, just before the state machine is executed. 
+
+<span id="state-1-initialization"><a name="state-1-initialization"> </a></span>
 
 ### State 1: Initialization
 
 * The fault counters for Vin under-voltage and over-voltage are set. 
 * Done here to enable Vin faults when auxiliary power is driven via USB connected to the DP-PIM.
 
+<span id="state-2-fault-active"><a name="state-2-fault-active"> </a></span>
+
 ### State 2: Fault Active
 * Stays here until all fault conditions are cleared.
+
+<span id="state-3-standby"><a name="state-3-standby"> </a></span>
 
 ### State 3: Standby
 * PWM is active, and the control mode (open loop or closed loop) is saved. 
@@ -386,18 +439,28 @@ A brief description of each state is given in this section.
   * instead, the voltage loop demand directly drives the duty cycle. 
   * At this point, the voltage loop demand is set to 0, which corresponds to minimum duty cycle.
 
+<span id="state-4-soft-start-in-open-loop"><a name="state-4-soft-start-in-open-loop"> </a></span>
+
 ### State 4: Soft-start in Open Loop
 * Duty cycle is increased linearly until Vout >= 3V.  
 * The saved control mode (open or closed loop) from state 3 is then restored. 
 * Voltage compensator initialized with preloaded value for controller output.
   * Ensures a smooth start to the soft-start ramp. 
 
+<span id="state-5-soft-start-closed-loop"><a name="state-5-soft-start-closed-loop"> </a></span>
+
 ### State 5: Soft-start (closed loop)
 * Voltage loop reference ramped linearly to give a fixed soft-start time under all conditions.
+
+<span id="state-6-up-and-running"><a name="state-6-up-and-running"> </a></span>
 
 ### State 6: Up and Running
 * Converter is running, and conditions based on flags are checked. 
 * Faults and HMI inputs can cause state change, depending on converter status.
+
+<span id="more-details-on-start-up"><a name="more-details-on-start-up"> </a></span>
+
+[[back to top](#start-doc)]
 
 ### More Details on Start-up
 Additional information on the start-up characteristic is shown below.
@@ -410,7 +473,12 @@ Additional information on the start-up characteristic is shown below.
 </p> 
 We start off in open loop mode with minimum duty cycle: this means that the duty cycle is directly proportional to the voltage loop reference (the compensator output is ignored). The duty is slowly increased until the output voltage reaches 3V. When Vout >= 3V, the duty cycle is saved and used as the new buck minimum duty cycle. The converter then switches to closed loop mode and the voltage loop reference is ramped linearly until it hits its target value. 
 
+[[back to top](#start-doc)]
+
+
 ---
+
+<span id="plant-frequency-response-simulation-with-mplab-mindi"><a name="plant-frequency-response-simulation-with-mplab-mindi"> </a></span>
 
 ## Plant Frequency Response Simulation with MPLAB® Mindi™
 Mindi™ is the Microchip-branded demo version of Simplis/SiMetrix. It supports the common features of the Simplis Standard License but limits the number of circuit nodes. 
@@ -439,7 +507,11 @@ To run the simulation, select Simulator -> Run Schematic.
 
 To save the results in .csv format, click on the results window, then click "Edit -> Copy ASCII data"
 
+[[back to top](#start-doc)]
+
 ---
+
+<span id="importing-plant-frequency-response-into-dcdt"><a name="importing-plant-frequency-response-into-dcdt"> </a></span>
 
 ## Importing Plant Frequency Response into DCDT
 
@@ -499,6 +571,8 @@ Note that the "feedback gain" setting in DCDT for both the 2P2Z and 3P3Z project
 </p> 
 
 This value is correct for this development board and considers all gains in the system. It means that if the plant is measured and imported, the tool can be used to combine the compensator and plant response to estimate the closed-loop frequency response.
+
+[[back to top](#start-doc)]
 
 ---
 
