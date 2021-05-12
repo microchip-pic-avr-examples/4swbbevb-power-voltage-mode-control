@@ -3,22 +3,22 @@
    "category":"com.microchip.ide.project",
    "content":{
       "metaDataVersion":"1.0.0",
-      "name":"com.microchip.mplabx.project.dspic33c-power-4swbb-devboard-voltage-mode-control",
-      "version":"x.x.x",
-      "displayName":"xxxxxxxxxxxxxxx",
-      "projectName":"dspic33c-power-4swbb-devboard-voltage-mode-control",
-      "shortDescription":"xxxxxxxxxxxxxxx",
+      "name":"com.microchip.mplabx.project.dpsk3-power-buck-voltage-mode-control",
+      "version":"1.0.0",
+      "displayName":"4-Switch Buck-Boost Converter Voltage Mode Control",
+      "projectName":"dspic33c-power-4swbb-voltage-mode-control",
+      "shortDescription":"Digital control loop implementation of a simple voltage mode controller regulating the output voltage of a 4-switch buck-boost converter",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=5.40.0"
+         "semverRange":">=5.45.0"
       },
       "compiler":{
          "name":"XC16",
-         "semverRange":"^1.50.0"
+         "semverRange":"^1.70.0"
       },
       "dfp":{
-         "name":"xxxxxxxxxxxxxxx",
-         "semverRange":">=x.x.x"
+         "name":"dsPIC33CK-MP_DFP",
+         "semverRange":">=1.6.176"
       },
 	  "configurator": {
          "name": "MCC",
@@ -30,17 +30,28 @@
          "content":{
             "metaDataVersion":"1.0.0",
             "category":"com.microchip.device",
-            "name":"xxxxxxxxxxxxxxx",
+            "name":"dsPIC33CK256MP506",
             "versionRange":"*"
          }
       },
       "peripherals":[
-         "DMA",
-         "CAN"
+        "UART",
+        "Analog Comparator",
+        "SMPS PWM",
+        "ADC",
+        "TIMER"
       ],
-      "keywords":[
-         "DMA",
-         "Sensor"
-      ]
-   }
+      "subcategories": [
+		"Power",
+		"Power Management and Conversion"
+       ],
+       "keywords": [
+		"dsPIC",
+        "DSC",
+        "Digital Power Conversion",
+        "Power Conversion",
+        "Power Supply",
+		"SMPS"
+       ]
+     }
 }
