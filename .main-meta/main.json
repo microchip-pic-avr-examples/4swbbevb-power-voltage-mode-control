@@ -6,7 +6,7 @@
       "name":"com.microchip.mplabx.project.dpsk3-power-buck-voltage-mode-control",
       "version":"1.0.0",
       "displayName":"4-Switch Buck-Boost Converter Voltage Mode Control",
-      "projectName":"dspic33c-power-4swbb-voltage-mode-control",
+      "projectName":"dspic33c-power-4swbb-devboard-voltage-mode-control",
       "shortDescription":"Digital control loop implementation of a simple voltage mode controller regulating the output voltage of a 4-switch buck-boost converter",
       "ide":{
          "name":"MPLABX",
