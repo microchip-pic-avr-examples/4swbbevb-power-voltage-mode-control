@@ -3,7 +3,7 @@
    "category":"com.microchip.ide.project",
    "content":{
       "metaDataVersion":"1.0.0",
-      "name":"com.microchip.mplabx.project.dpsk3-power-buck-voltage-mode-control",
+      "name":"com.microchip.mplabx.project.dspic33c-power-4swbb-devboard-voltage-mode-control",
       "version":"1.0.0",
       "displayName":"4-Switch Buck-Boost Converter Voltage Mode Control",
       "projectName":"dspic33c-power-4swbb-voltage-mode-control",
