@@ -1,4 +1,4 @@
-# dspic33c-power-4swbb-devboard-voltage-mode-control, release v1.0.0
+# 4swbbevb-power-voltage-mode-control, release v1.0.0
 
 ### Release Highlights
 This is the initial release demonstrating the basic control loop implementation of a simple digital voltage mode control loop regulating the output voltage of a 4-switch buck boost converter.
@@ -20,9 +20,10 @@ This example is part #1 of a series of code examples for the 4-Switch Buck-Boost
 - Four-Switch Buck-Boost Development Board, Part-No. [EV44M28A](https://www.microchip.com/developmenttools/ProductDetails/PartNO/EV44M28A)
 - dsPIC33CK256MP506 Digital Power PIM, Part-No. [MA330048](https://www.microchip.com/MA330048)
 
-### Needed Software:
+### Recommended Software:
 - [Power Board Visualizer GUI](https://www.microchip.com/SWLibraryWeb/product.aspx?product=POWER_BOARD_VISUALIZER)
 - [MPLAB&reg; X IDE v5.45](https://www.microchip.com/mplabx-ide-windows-installer)
 - [MPLAB&reg; XC16 Compiler v1.70](https://www.microchip.com/mplabxc16windows)
 - [Microchip Code Configurator v4.0.2](https://www.microchip.com/mplab/mplab-code-configurator)
 - [Digital Compensator Design Tool](https://www.microchip.com/developmenttools/ProductDetails/DCDT)
+
